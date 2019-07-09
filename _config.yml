@@ -10,7 +10,7 @@ twitter_username: jekyllrb
 github_username:  jekyll
 
 # Build settings
-theme: jekyll-material-theme
+remote_theme: jameshamann/jekyll-material-theme
 markdown: kramdown
 permalink: pretty
 plugins:
