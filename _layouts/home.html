@@ -9,11 +9,11 @@
         <div class="row center">
           <h5 class="header col s12 light">{{ site.description }}</h5>
         </div>
-        <p style="text-align:center;"><a class="waves-effect waves-light btn grey darken-3 z-depth-3" href="/blog/index.html"><i class="material-icons right">library_books</i>Blog</a></p>
+        <p style="text-align:center;"><a class="waves-effect waves-light btn grey darken-3 z-depth-3" href="/posts/"><i class="material-icons right">library_books</i>博客</a></p>
         <br><br>
       </div>
     </div>
-    <div class="parallax"><img src="{{site.parallax_image_one}}" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img src="{{site.data.resume.parallax_image_one}}" alt="Unsplashed background img 1"></div>
   </div>
 </div>
 
@@ -25,10 +25,9 @@
 <div class="container" style="padding:20px;">
   <div id="portfolio" class="section scrollspy">
 
-  <h3 style="text-align:center;">{{site.portfolio_heading}}</h3>
+  <h3 style="text-align:center;">简介</h3>
 
-{% include portfolio_{{site.portfolio_type}}.html %}
-
+  {% include portfolio.html %}
 </div>
 
 
@@ -36,12 +35,10 @@
 
 <div class="container" style="padding:20px;">
   <div id="skills" class="section scrollspy">
-   <h3 style="text-align:center;">Tools and Experience</h3>
+   <h3 style="text-align:center;">技能 & 工具</h3>
    {% include skills.html %}
  </div>
 </div>
-
-
 
 
   <div class="parallax-container valign-wrapper">
@@ -52,20 +49,20 @@
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="{{site.parallax_image_two}}" alt="Unsplashed background img 3"></div>
+    <div class="parallax"><img src="{{site.data.resume.parallax_image_two}}" alt="Unsplashed background img 3"></div>
   </div>
 
 
 <div class="container" style="padding:20px;">
   <div id="blog" class="section scrollspy">
-  <h3 style="text-align:center;">Blog</h3>
+  <h3 style="text-align:center;">博客</h3>
   {% include blog-feed.html %}
 </div>
 </div>
 
 <div class="container" style="padding:20px;">
   <div id="contact" class="section scrollspy">
-  <h3 style="text-align:center;">Contact</h3>
+  <h3 style="text-align:center;">联系我</h3>
   {% include contact.html %}
 </div>
 </div>

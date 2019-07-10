@@ -1,18 +1,15 @@
 <div class="row">
-
   <div class="col s12">
     <div class="card">
       <div class="card-image">
         <span class="card-title"><a style="color:white" href=""></a></span>
       </div>
         <div class="card-content">
-
-
-      {% for skill in site.skills %}
+      {% for skill in site.data.skills %}
         {% if skill.name and skill.uri %}
-          <img src="{{skill.uri}}" style="height:{{site.icon_size}}px;" title="{{skill.name}}"></img>
+          <img src="{{skill.uri}}" style="height:{{skill.size}}px;" title="{{skill.name}}"></img>
         {% else %}
-          <i class="devicon-{{skill.name}}-plain {{site.colored}}" style="font-size:{{site.icon_size}}px;" title="{{skill.name}}"></i>
+          <i class="devicon-{{skill.name}}-plain {{skill.color}}" style="font-size:{{skill.size}}px;" title="{{skill.name}}"></i>
         {% endif %}
       {% endfor %}
       </div>

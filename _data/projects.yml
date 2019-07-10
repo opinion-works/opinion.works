@@ -1,0 +1,25 @@
+---
+- name: P2P 产品化
+  description: 2008 年中国第一家 P2P 陆金所通过ThoughtWorks在中国落地，经过5年的发展，P2P迎来自己的窗口期。很多传统的大型金融机构都想通过 ThoughtWorks 的技术能力，帮他们布局 P2P的市场。P2P 产品化项目就是一个对于不同金融机构，不同的需求的大规模定制项目。在项目中负责架构的设计，并且实现核心的用户系统，以及投融资系统。通过一套定制化的DSL 来完成不同公司，不同业务的定制功能。
+  url: https://github.com/sjkyspa
+  icon: location_on
+  activator: ../assets/images/desk.jpg
+  button: Github
+- name: 云原生统一过程
+  description: PaaS 作为面向开发者平台，无疑给开发人员或者团队带来很大的效率提升。但是传统的CI/CD 流程如何在 PaaS 平台上的云原生应用中发挥最大的作用却没有比较完善的解决方案。通过抽象出：构建运行时，验证运行时，应用运行时三个运行时，通过将三个运行时之间的状态流转来实现云原生状态下的 CI/CD 。通过抽象出技术栈的概念将公司级别的能力进行复用，以便于业务开发人员更快的实现自己的业务需求。
+  url: https://github.com/sjkyspa
+  icon: photo_camera
+  activator: ../assets/images/typewriter.jpg
+  button: Github
+- name: 启明医生
+  description: 启明医生旨在解决中国医疗资源不均衡的问题，平台中汇集国内外大病专家医生，为病患提供专业的疑难大病咨询服务（第二次诊疗意见）、转诊等服务。该项目为创业项目，在其中，负责架构设计，项目管理，以及核心功能实现。
+  url: https://github.com/sjkyspa
+  icon: hotel
+  activator: ../assets/images/contact2.jpg
+  button: Github
+- name: REST API通信协议
+  description: 对于一个大型公司，或者对外提供 API 服务的公司来讲，如何保证公司内部，外部通过统一的REST 通信协议来通信，如何知道所有的人员如何去设计和实现相应的业务？国内的通信和能源巨头他们都遇到这种问题，通过为期三个月的咨询项目，为客户定制相应的通信协议，并且编写 REST API 实施指导，指导相关人员完成业务的设计和实现。
+  url: https://github.com/sjkyspa
+  icon: restaurant
+  activator: ../assets/images/contact4.png
+  button: Github
