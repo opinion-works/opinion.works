@@ -1,5 +1,44 @@
-{% include head.html %}
+<!DOCTYPE html>
+<html>
+      <head>
+      {% if jekyll.environment == 'production' %}
+        {% if site.tag_manager_id %}
+          {% include google_tag_manager.html %}
+        {% elsif site.google_analytics_tracking_id %}
+          {% include google_analytics.html %}
+        {% endif %}
+      {% endif %}
 
-  {{content}}
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% include footer.html %}
+      {% if page.links %}
+      {% include {{page.links}} %}
+      {% endif %}
+
+      <title>{{site.title}}</title>
+    </head>
+  <body>
+    {% if site.tag_manager_id and jekyll.environment == 'production' %}
+      <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{site.tag_manager_id}}"
+          height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+       <!-- End Google Tag Manager (noscript) -->
+        {% endif %}
+      {% if page.header %}
+      {% include {{ page.header }} %}
+      {% endif %}
+
+
+        {{content}}
+      {% if page.scripts %}
+      {% include {{ page.scripts }} %}
+      {% endif %}
+  </body>
+        {% if page.footer %}
+      {% include {{ page.footer }} %}
+  {% endif %}
+  </body>
+
+
+</html>

@@ -21,6 +21,14 @@ defaults:
       type: "posts"
     values:
       permalink: /posts/:year/:month/:day/:title/
+  - scope:
+      path: ""
+      type: pages
+    values:
+      links: links.html
+      scripts: scripts.html
+      header: header.html
+      footer: footer.html
 
 about:
   owner:

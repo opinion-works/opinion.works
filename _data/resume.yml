@@ -2,19 +2,6 @@ display_footer: inital  #change this to 'none' if you want to hide the footer co
 parallax_image_one: assets/images/startup3.jpg # These are the images used for the parallax background
 parallax_image_two: assets/images/startup3.jpg
 
-# Settings for the porfolio section
-portfolio_heading: 简介
-portfolio_type: cards #cards or carousel
-
-
-# Skill icons from https://konpa.github.io/devicon/
-
-
-icon_size: 50 # font-size of icons in px
-colored: colored # Leave blank for black and white icons
-
-project_button: Github
-
 github: https://github.com/sjkyspa
 medium: https://medium.com
 
