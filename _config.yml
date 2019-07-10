@@ -1,19 +1,26 @@
 title: 孙建康
 email: rising.lambda@gmail.com
 description: 软件开发/全桟工程师
-baseurl: "/blog" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://opinion.works" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: rising.lambda
 github_username:  sjkyspa
 
 # Build settings
-remote_theme: jameshamann/jekyll-material-theme
 markdown: kramdown
 permalink: pretty
 plugins:
   - jekyll-feed
   - jekyll-assets
   - jekyll-minifier
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      permalink: /blog/:year/:month/:day/:title/
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -26,7 +33,6 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-
 
 
 display_footer: inital  #change this to 'none' if you want to hide the footer copyright text
