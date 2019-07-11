@@ -9,6 +9,9 @@
      $('.carousel.carousel-slider').carousel({fullWidth: true});
      $('.materialboxed').materialbox();
      $('.scrollspy').scrollSpy();
+     $('.fixed-action-btn').floatingActionButton({
+       direction: 'left'
+     });
 
      if (localStorage.getItem('cookieconsent') === 'true') {
        $('#cookies').hide();
