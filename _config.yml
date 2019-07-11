@@ -58,6 +58,16 @@ defaults:
       footer: blog/footer.mobile.html
       meta: meta.html
 
+compress_html:
+  clippings: []
+  comments: []
+  endings: []
+  ignore:
+    envs: []
+  blanklines: false
+  profile: false
+  startings: []
+
 about:
   owner:
     name: 孙建康
@@ -67,10 +77,10 @@ about:
 
 
 
-avatar: /assets/images/avatar.png
+avatar: https://i.loli.net/2019/07/11/5d26f5681683231079.png
 
 # 你的favicon（出现在浏览器tab上）图片URL，建议使用较小(64px × 64px)的图片
-favicon: /assets/icons/favicon.png
+favicon: https://i.loli.net/2019/07/11/5d26f6ee5ac5d37582.png
 
 # Tabs in header. There are 'Blog', 'About', 'Archive', 'Tags'
 # and URL Link(e.g. 'Theme' tab below) tabs. If you don't need one, just delete

@@ -228,9 +228,9 @@
   size: 50
 - name: ansible
   color: colored
-  uri: /assets/icons/ansible.png
+  uri: https://i.loli.net/2019/07/11/5d26f6ee55c3363449.png
   size: 50
 - name: emacs
   color: colored
-  uri: /assets/icons/emacs.jpeg
+  uri: https://i.loli.net/2019/07/11/5d26f6ee4218796184.jpeg
   size: 50
