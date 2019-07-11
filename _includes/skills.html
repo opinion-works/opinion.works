@@ -7,7 +7,7 @@
         <div class="card-content">
       {% for skill in site.data.skills %}
         {% if skill.name and skill.uri %}
-          <img src="{{skill.uri}}" style="height:{{skill.size}}px;" title="{{skill.name}}"></img>
+          <img src="{{skill.uri}}" style="height:{{skill.size}}px;" title="{{skill.name}}" referrerpolicy="no-referrer"></img>
         {% else %}
           <i class="devicon-{{skill.name}}-plain {{skill.color}}" style="font-size:{{skill.size}}px;" title="{{skill.name}}"></i>
         {% endif %}
