@@ -1,5 +1,5 @@
-name: opinion.works
-title: 創意市集
+name: 创意市集
+title: 创意市集
 email: rising.lambda@gmail.com
 description: 为者常成，行者常至
 baseurl:  # the subpath of your site, e.g. /blog
@@ -59,7 +59,7 @@ defaults:
 about:
   owner:
     name: 孙建康
-    title: 软件开发/全桟工程师
+    title: 软件开发/全栈工程师
     github:
       uri: https://github.com/sjkyspa
 
@@ -68,7 +68,7 @@ about:
 avatar: /assets/images/avatar.png
 
 # 你的favicon（出现在浏览器tab上）图片URL，建议使用较小(64px × 64px)的图片
-favicon: https://raw.githubusercontent.com/FromEndWorld/endworld/master/images/favicon.png
+favicon: /assets/icons/favicon.png
 
 # Tabs in header. There are 'Blog', 'About', 'Archive', 'Tags'
 # and URL Link(e.g. 'Theme' tab below) tabs. If you don't need one, just delete
