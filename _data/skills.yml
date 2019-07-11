@@ -1,28 +1,16 @@
 - name: amazonwebservices
   color: colored
   size: 50
-- name: android
-  color: colored
-  size: 50
 - name: angularjs
   color: colored
   size: 50
 - name: apache
   color: colored
   size: 50
-- name: appcelerator
-  color: colored
-  size: 50
-- name: apple
-  color: colored
-  size: 50
 - name: atom
   color: colored
   size: 50
 - name: babel
-  color: colored
-  size: 50
-- name: backbonejs
   color: colored
   size: 50
 - name: bitbucket
@@ -40,13 +28,7 @@
 - name: chrome
   color: colored
   size: 50
-- name: codeigniter
-  color: colored
-  size: 50
 - name: coffescript
-  color: colored
-  size: 50
-- name: confluence
   color: colored
   size: 50
 - name: cplusplus
@@ -61,9 +43,6 @@
 - name: cucumber
   color: colored
   size: 50
-- name: d3js
-  color: colored
-  size: 50
 - name: debian
   color: colored
   size: 50
@@ -76,16 +55,7 @@
 - name: docker
   color: colored
   size: 50
-- name: doctrine
-  color: colored
-  size: 50
 - name: dot-net
-  color: colored
-  size: 50
-- name: drupal
-  color: colored
-  size: 50
-- name: erlang
   color: colored
   size: 50
 - name: facebook
@@ -94,13 +64,7 @@
 - name: firefox
   color: colored
   size: 50
-- name: foundation
-  color: colored
-  size: 50
 - name: gatling
-  color: colored
-  size: 50
-- name: gimp
   color: colored
   size: 50
 - name: git
@@ -136,12 +100,6 @@
 - name: ie10
   color: colored
   size: 50
-- name: illustrator
-  color: colored
-  size: 50
-- name: inkscape
-  color: colored
-  size: 50
 - name: itellij
   color: colored
   size: 50
@@ -154,25 +112,16 @@
 - name: javascript
   color: colored
   size: 50
-- name: laravel
-  color: colored
-  size: 50
 - name: less
   color: colored
   size: 50
 - name: linux
   color: colored
   size: 50
-- name: meteor
-  color: colored
-  size: 50
 - name: mocha
   color: colored
   size: 50
 - name: mongodb
-  color: colored
-  size: 50
-- name: moodle
   color: colored
   size: 50
 - name: mysql
@@ -185,12 +134,6 @@
   color: colored
   size: 50
 - name: nodewebkit
-  color: colored
-  size: 50
-- name: oracle
-  color: colored
-  size: 50
-- name: photoshop
   color: colored
   size: 50
 - name: php
@@ -232,9 +175,6 @@
 - name: sass
   color: colored
   size: 50
-- name: sequelize
-  color: colored
-  size: 50
 - name: slack
   color: colored
   size: 50
@@ -242,12 +182,6 @@
   color: colored
   size: 50
 - name: ssh
-  color: colored
-  size: 50
-- name: swift
-  color: colored
-  size: 50
-- name: symfony
   color: colored
   size: 50
 - name: tomcat
@@ -292,10 +226,11 @@
 - name: yii
   color: colored
   size: 50
-- name: zend
-  color: colored
-  size: 50
 - name: ansible
   color: colored
   uri: /assets/icons/ansible.png
+  size: 50
+- name: emacs
+  color: colored
+  uri: /assets/icons/emacs.jpeg
   size: 50
