@@ -9,14 +9,14 @@
         {% endif %}
       {% endif %}
 
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+      {% if page.meta %}
+      {% include {{page.meta}} %}
+      {% endif %}
 
       {% if page.links %}
       {% include {{page.links}} %}
       {% endif %}
-
-      <title>{{site.title}}</title>
+      <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
     </head>
   <body>
     {% if site.tag_manager_id and jekyll.environment == 'production' %}
@@ -35,8 +35,8 @@
       {% include {{ page.scripts }} %}
       {% endif %}
   </body>
-        {% if page.footer %}
-      {% include {{ page.footer }} %}
+  {% if page.footer %}
+  {% include {{ page.footer }} %}
   {% endif %}
   </body>
 

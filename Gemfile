@@ -16,6 +16,7 @@ group :jekyll_plugins do
   gem "jekyll-assets"
   gem "jekyll-minifier"
   gem "jekyll-paginate"
+  gem "jekyll-sitemap"
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

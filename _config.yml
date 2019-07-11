@@ -1,7 +1,7 @@
 name: opinion.works
-title: 孙建康
+title: 創意市集
 email: rising.lambda@gmail.com
-description: 软件开发/全桟工程师
+description: 为者常成，行者常至
 baseurl:  # the subpath of your site, e.g. /blog
 url: https://opinion.works # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -13,25 +13,108 @@ plugins:
   - jekyll-assets
   - jekyll-minifier
   - jekyll-paginate
+  - jekyll-sitemap
 
 defaults:
   -
     scope:
       path: ""
-      type: "posts"
+      type: posts
     values:
       permalink: /posts/:year/:month/:day/:title/
+      links: blog/links.html
+      scripts: blog/scripts.html
+      header: blog/header.html
+      footer: blog/footer.mobile.html
+      meta: meta.html
+
   - scope:
-      path: ""
+      path: about
       type: pages
     values:
       links: links.html
       scripts: scripts.html
       header: header.html
       footer: footer.html
+      meta: meta.html
+  - scope:
+      path: ""
+      type: pages
+    values:
+      links: blog/links.html
+      scripts: blog/scripts.html
+      header: blog/header.html
+      footer: blog/footer.mobile.html
+      meta: meta.html
+  - scope:
+      path: tags
+      type: pages
+    values:
+      links: blog/links.html
+      scripts: blog/scripts.html
+      header: blog/header.html
+      footer: blog/footer.mobile.html
+      meta: meta.html
 
 about:
   owner:
     name: 孙建康
+    title: 软件开发/全桟工程师
     github:
       uri: https://github.com/sjkyspa
+
+
+
+avatar: /assets/images/avatar.png
+
+# 你的favicon（出现在浏览器tab上）图片URL，建议使用较小(64px × 64px)的图片
+favicon: https://raw.githubusercontent.com/FromEndWorld/endworld/master/images/favicon.png
+
+# Tabs in header. There are 'Blog', 'About', 'Archive', 'Tags'
+# and URL Link(e.g. 'Theme' tab below) tabs. If you don't need one, just delete
+# it from the list(Delete '- name: ' and 'url: ', too!)
+navigation:
+  - name: 关于
+    url: /about
+  - name: 文章
+    url: /
+  - name: 标签
+    url: /tags
+
+# Pagination
+paginate: 8
+
+excerpt_separator: <!-- more -->
+paginate_path: /page:num/
+# Includes an icon in the footer for each username you enter
+footer-links:
+  weibo: sjkyspa #请输入你的微博个性域名 https://www.weibo.com/<thispart>
+  behance: # https://www.behance.net/<username>
+  dribbble:
+  email: rising.lambda@gmail.com
+  facebook: rising.lambda
+  flickr:
+  github: sjkyspa
+  googleplus: # anything in your profile username that comes after plus.google.com/
+  instagram:
+  linkedin:
+  pinterest:
+  rss: # just type anything here for a working RSS icon
+  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
+  tumblr: # https://<username>.tumblr.com
+  twitter:
+  youtube: # channel/<your_long_string> or user/<user-name>
+
+# Text under the icons in footer
+footer-text: Copyright (c) 2019 opinion.works
+
+# Enter your Disqus shortname (not your username) to enable commenting on posts
+# You can find your shortname on the Settings page of your Disqus account
+disqus: # fromendworld
+
+# Gitalk
+gitalk:
+  clientID: 47178fc1af282e823505
+  clientSecret: 6a31e387eddad2cbd9face8d8d046a8961328138
+  repo: endworld
+  owner: FromEndWorld

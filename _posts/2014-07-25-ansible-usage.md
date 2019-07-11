@@ -3,9 +3,13 @@ layout: post
 title:  "Ansible 入门"
 date:   2014-07-25 16:17:59 +0800
 categories: devops
+tags: devops
 ---
 
-# ansible 
+ansible是个什么东西呢？官方的title是“Ansible is Simple IT Automation”——简单的自动化IT工具。这个工具的目标有这么几项：自动化部署APP；自动化管理配置项；自动化的持续交互；自动化的（AWS）云服务管理
+
+<!-- more -->
+
 ### inventory 配置
 ---
 ```
