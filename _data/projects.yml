@@ -21,5 +21,5 @@
   description: 对于一个大型公司，或者对外提供 API 服务的公司来讲，如何保证公司内部，外部通过统一的REST 通信协议来通信，如何知道所有的人员如何去设计和实现相应的业务？国内的通信和能源巨头他们都遇到这种问题，通过为期三个月的咨询项目，为客户定制相应的通信协议，并且编写 REST API 实施指导，指导相关人员完成业务的设计和实现。
   url: https://github.com/sjkyspa
   icon: restaurant
-  activator: ../assets/images/contact4.png
+  activator: ../assets/images/contact4.jpg
   button: Github
