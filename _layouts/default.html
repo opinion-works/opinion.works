@@ -4,14 +4,6 @@ layout: compress
 <!DOCTYPE html>
 <html>
       <head>
-      {% if jekyll.environment == 'production' %}
-        {% if site.tag_manager_id %}
-          {% include google_tag_manager.html %}
-        {% elsif site.google_analytics_tracking_id %}
-          {% include google_analytics.html %}
-        {% endif %}
-      {% endif %}
-
       {% if page.meta %}
       {% include {{page.meta}} %}
       {% endif %}
@@ -21,6 +13,9 @@ layout: compress
       {% endif %}
       <link rel="shortcut icon" href="{{ site.favicon }}">
       <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+      {% if jekyll.environment == 'production' %}
+      {% include ba.html %}
+      {% endif %}
     </head>
   <body>
     {% if site.tag_manager_id and jekyll.environment == 'production' %}
