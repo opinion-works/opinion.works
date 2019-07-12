@@ -23,7 +23,7 @@ defaults:
       path: ""
       type: posts
     values:
-      permalink: /posts/:year/:month/:day/:title/
+      permalink: /documents/:year/:month/:day/:title/
       links: blog/links.html
       scripts: blog/scripts.html
       header: blog/header.html
