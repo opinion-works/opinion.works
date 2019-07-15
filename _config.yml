@@ -16,6 +16,7 @@ plugins:
   - jekyll-minifier
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-seo-tag
 
 defaults:
   -

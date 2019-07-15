@@ -13,7 +13,6 @@ layout: compress
       {% if page.links %}
       {% include {{page.links}} %}
       {% endif %}
-
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({
@@ -25,7 +24,8 @@ layout: compress
       {% if jekyll.environment == 'production' %}
       {% include ba.html %}
       {% endif %}
-    </head>
+      {% seo %}
+  </head>
   <body>
     {% if site.tag_manager_id and jekyll.environment == 'production' %}
       <!-- Google Tag Manager (noscript) -->
