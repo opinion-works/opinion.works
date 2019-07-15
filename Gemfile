@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby '2.6.3'
+ruby '2.4.1'
 gem "jekyll", "~> 3.8.6"
 gem 'materialize-sass'
 gem "minima", "~> 2.0"
