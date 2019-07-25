@@ -5,7 +5,7 @@ faith: 为者常成，行者常至
 lang: zh_CN
 baseurl:  # the subpath of your site, e.g. /blog
 url: https://opinion.works # the base hostname & protocol for your site, e.g. http://example.com
-
+avatar: https://ae01.alicdn.com/kf/Hec6ee1c6a2294c24ab55bee99c369f621.png
 # seo plugin
 author: 孙建康
 
@@ -82,7 +82,7 @@ about:
 
 
 
-avatar: https://ws1.sinaimg.cn/large/87380558ly1g4w19m2ycij20e80e811s.jpg
+
 
 # 你的favicon（出现在浏览器tab上）图片URL，建议使用较小(64px × 64px)的图片
 
