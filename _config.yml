@@ -1,9 +1,12 @@
-name: 创意改变生活
-title: 创意市集
+title: 创意改变生活
 email: rising.lambda@gmail.com
-description: 为者常成，行者常至
+description: 创意改变生活opinion.works-微服务,REST,架构,PaaS,iot,后端,前端,emacs,e通过技术想法改变生活！
+lang: zh_CN
 baseurl:  # the subpath of your site, e.g. /blog
 url: https://opinion.works # the base hostname & protocol for your site, e.g. http://example.com
+
+# seo plugin
+author: 孙建康
 
 # Build settings
 markdown: kramdown
