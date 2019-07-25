@@ -1,26 +1,24 @@
 ---
 layout: post
-title: "Why mongodb"
+title: "为什么我们需要NoSQL -- mongodb"
 date: 2014-07-28 10:50:22 +0800
 categories: architecture db
 tags: architecture db
+excerpt: 关系型数据库可以保证我们操作可以在一个事务中完成，即便这些数据来自不同不同表中的不同的行。(Atomic Consistent Isolated Durable) No-SQL中没有事务来保证夸多个聚合根的一致性。只有事务用来保证单一聚合的Atomic的属性。也就是说如果我们需要夸聚合根的一致性的时候，我们需要在应用程序级别来保证。
+description: 关系型数据库可以保证我们操作可以在一个事务中完成，即便这些数据来自不同不同表中的不同的行。(Atomic Consistent Isolated Durable) No-SQL中没有事务来保证夸多个聚合根的一致性。只有事务用来保证单一聚合的Atomic的属性。也就是说如果我们需要夸聚合根的一致性的时候，我们需要在应用程序级别来保证。
 ---
 
-集群的冲击使得关系型数据库的优势：1. 查询，2.事务，3，一致性控制，受到了影响。
-以及关系型数据库的价格是根据单台server来算的对关系型数据库也有相当大的影响。
-
-<!-- more -->
-
-# Why mongodb?
-
-####  集群的冲击
+###  集群的冲击
 集群的冲击使得关系型数据库的优势：1. 查询，2.事务，3，一致性控制，收到了影响。
 以及关系型数据库的价格是根据单台server来算的对关系型数据库也有相当大的影响。
-#### 选择的原因
+
+### 选择的原因
 1. 需要集群来处理数据
 2. 使用更方便的数据交互方式来提高生产效率
-#### 聚合数据模型
-##### Data Model vs Storage Model
+
+### 聚合数据模型
+
+#### Data Model vs Storage Model
 
 > A Data model is the model through which we perceive and manipulate our data.
 For people using a database, the data model describes how we interact with data in the database. Often the data model means the model of the specific data in an application. A developer might point to an entity0relationship diagram of their database and refer to that as their data model containing customers, orders, products, and the like.
@@ -35,9 +33,10 @@ For people using a database, the data model describes how we interact with data 
 storage model是用来描述数据库内部如何存储及操作data的。
 
 Aggregates支持对Aggreate中的单一元素进行原子操作。
-##### Product Order 两种模型间的对比
 
-#### KeyValue vs Document Database
+#### Product Order 两种模型间的对比
+
+### KeyValue vs Document Database
 keyvalue经常用来存放一些大块的二进制快的数据，所以聚合关系对于数据库来说是不透明的，即你不可以通过查看数据库，知道这些数据的准确的意思。或者得到聚合关系中的一块信息  
 document 数据库，可以通过查看数据库很明确的知道数据的聚合关系，及结构
 
@@ -47,7 +46,7 @@ document database可以在聚合上定义允许的数据结构，优点是可以
 
 他们俩最大的区别就是一个主要是用来以key 查找的，一个主要是以结构化的query来查找的
 
-#### Key of NOSql
+### Key of NOSQL
 所有的数据共享中心的聚合关系，这个聚合关系被一个中心节点以key的形式做index，这个中心节点就是集群的中心节点，集群需要确保某个聚合实体的数据都被存放在单一的节点上。这时候这个单一实体的操作都发生在某个单一的节点上。所以单一实体的操作的原子性由某个聚合实体所在的节点来保证。
 ****
 我们在对数据建模其实很多时候只是在对我们的数据使用场景的一种表现，如果我们经常的到一个用户信息的时候我就需要知道他的所有的Order，那么此时我们就可以将oders embed到我们的customer中。但是如果我们经常只需要知道一个用户的基本信息，他的order不care，那此时如果把orders embed到customer中，此时就会造成查询的性能非常低下。
@@ -105,7 +104,7 @@ document database可以在聚合上定义允许的数据结构，优点是可以
     	"orderItems":[]
     }
 
-#### NoRelation vs relation
+### NoRelation vs relation
 ---
 
 1. Storage model 不相同
@@ -177,10 +176,10 @@ document database可以在聚合上定义允许的数据结构，优点是可以
 
 面相聚合的数据库存在及流行的主要原因是因为集群。当我们需要在集群中保存数据的时候我们必须知道哪些数据应该被当成单一的数据块来进行操作，那么这些数据应该被保存到一起，保存到一个节点上。
 
-#### 事务
+### 事务
 关系型数据库可以保证我们操作可以在一个事务中完成，即便这些数据来自不同不同表中的不同的行。(Atomic Consistent Isolated Durable)
 No-SQL中没有事务来保证夸多个聚合根的一致性。只有事务用来保证单一聚合的Atomic的属性。也就是说如果我们需要夸聚合根的一致性的时候，我们需要在应用程序级别来保证。
 
-#### More
+### More
 聚合关系把相关联的数据作为数据单元来进行操作。但是仍然存在使用不同的存取和操作这些相关联的数据的场景。在customer-order的关系中，有的程序在访问order的时候就需要order history，这种场景可以将order聚合到customer中，这样我们就只有一个aggreate。但是在我们的货运系统中我们就需要就对每个订单进行单独存取。此时就需要order作为单一的聚合。这种情况下我们可以将customer和order作为两个单独的聚合。但是在这两个聚合上存在某种关系，以便我们可以获取customer的order，和获取order的customer。最简单的方法就是在customer上聚合order的id，在order上embed customer_id. 但是这种情况下db对这种关系是ignorant。所以此时我们只能通过aggreate 上的query来对这种关系提供支持，此时可以order上建立customer_id的index和在customer上建立order_id的index来提高query的执行效率。
 

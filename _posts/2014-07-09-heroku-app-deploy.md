@@ -1,18 +1,17 @@
 ---
 layout: post
-title: "Heroku App Deploy"
+title: "如何使用 Heroku 部署应用"
 date: 2014-07-09 22:14:50 +0800
 categories: devops
 tags: devops
+excerpt: 如何使用Heroku来部署一个新的应用
+description: 如何使用Heroku来部署一个新的应用(Heroku App Deploy)
 ---
 
 如何使用Heroku来部署一个新的应用
 
-<!-- more -->
-
-# Heroku App Deploy
-###### 1. 申请账号
-###### 2. 登录账号创建一个项目
+### 1. 申请账号
+### 2. 登录账号创建一个项目
 可以使用下面的命令来创建一个新的App
 ```
 heroku create
@@ -50,26 +49,26 @@ hint: (e.g. 'git pull ...') before pushing again.
 	git push heroku `git subtree split --prefix pythonapp master`:master --force
 ```
 
-###### 3. 安装postgres
+### 3. 安装postgres
 因为heroku不支持sqllite数据库，所以此时我们需要使用其他的数据库。我们可以使用heroku来提供的postgresql。使用下面命令安装
 
 ```
 heroku addons:add heroku-postgresql --app=myapp
 ```
-###### 4. 配置
+### 4. 配置
 此时我们使用的postgresql虽然已经安装好了，但是却没有做正确的设置，所以此时我们需要对我们db进行配置
 
 ```
 heroku  run --app=myapp rake db:migrate
 ```
 
-###### 5. 运维
+### 5. 运维
 可以使用下面的命令来查看服务器实时的日志信息
 ```
  heroku logs --tail --app=myapp
 ```
 
-###### 6. 更多的配置
+### 6. 更多的配置
 Procfile
 
 

@@ -1,17 +1,15 @@
 ---
 layout: post
-title: "jersey & mybatis rest api"
+title: "如何使用Java Jersey MyBatis 编写微服务 REST API"
 date: 2014-10-10 20:22:50 +0800
 categories: java mybatis rest api
 tags: java mybatis rest api
+excerpt: jersey 和 mybatis 做为 java 界的扛把子，我们应该如何一步一步的通过测试驱动开发的方式来完成一个API的实现过程。这篇文章会给以一个详细的介绍
+description: jersey 和 mybatis 做为 java 界的扛把子，我们应该如何一步一步的通过测试驱动开发的方式来完成一个API的实现过程。这篇文章会给以一个详细的介绍
 ---
 
-jersey 和 mybatis 做为 java 界的扛把子，我们应该如何一步一步的通过测试驱动开发的方式来完成一个API的实现过程。这篇文章会给以一个详细的介绍
-
-<!-- more -->
-
-# jersey & mybatis product order api
 具体代码库请见[jersey tdd](https://github.com/sjkyspa/order_jersey)
+
 ###### 安装需要的库
 ```
 compile 'javax.ws.rs:javax.ws.rs-api:2.0'
@@ -27,15 +25,18 @@ testCompile "org.mockito:mockito-core:1.9.5"
 ###### gradle 安装所有文件
 
 ##### Product
+
 ###### 200 测试
 在intelij中，需要注意的是只有把测试目录设置为test root的时候才能跑测试。
 只需要测试200，保证get能够找到正确的路径
+
 ###### 404 测试
 与200测试相同的代码，但是此时需要表示404，此时就需要mock一个repository，而且在特定的情况下抛出相应的异常，使得程序返回404,此时可以驱动出来需要调用repository来拿相应的product，此时接口应该为
 
 ```
 Product getProductById(@Param("productId") int productId);
 ```
+
 ###### Post 测试
 1. 测试201，以一个很简单的Map来当做product的数据来测试route的正确性
 2. 测试uri，此时可以驱动出来需要使用指定的repository来createproduct，此时createProduct的接口应该为：
@@ -78,18 +79,21 @@ assertThat(priceArgumentCaptor.getValue().getEffectDate(), is(new SimpleDateForm
 
 
 ##### Price
+
 ###### /products/1/prices/1 200
 同product
+
 ###### /products/999/prices/1 404
 此时驱动出来需要在我们的price的route中需要调用product.getProductById(productID),但是由于jersey可以使用subresource，此时我们可以在product resource将构造好的product作为参数传给subresource，所以我们在subresource中，就不用再次getProduct，再多一份处理异常的代码
+
 ###### /products/1/prices/999 404
 此时驱动出来一个方法product.getProductPriceById(Product, priceId)
+
 ###### /products/1/prices post 201
 1. 201
 2. uri  
  	此时可以驱动出来需要使用指定的repository来保存我们需要创建的资源，因为此时我们需要使用如下的方面去测试。我们在stub中返回了我们创建的price的ID。驱动出我们需要在我们的controller中调用这个方法来创建我们的资源
- 	
- 	```
+ ```
  when(productRepository.createProductPrice(any(Product.class), any(Price.class))).thenReturn(2);
  ```
 2. product的captor的测试
@@ -97,11 +101,15 @@ assertThat(priceArgumentCaptor.getValue().getEffectDate(), is(new SimpleDateForm
 
 
 ##### Order
+
 ###### /users/1/orders/1 200
+
 ###### /users/999/orders/1 404
 此时可以驱动出调用userRepository.findUserById()
+
 ###### /users/1/orders/999 404
 此时可以驱动出userRepository.findUserOrderById()
+
 ###### post /users/999/orders 201
 此时可以驱动出userRepository.createOrderForUser(User, Order),
 也可以驱动出需要将user，和userRepository传入subResource
@@ -114,10 +122,12 @@ assertThat(priceArgumentCaptor.getValue().getEffectDate(), is(new SimpleDateForm
 当资源不是集合的时候此时post的驱动方式就会有一定的不同
 
 ###### get /users/1/orders/1/payment
+
 1. 200
 2. 404
 
 ###### post /users/1/orders/1/payment
+
 1. post /users/1/orders/1/payment {type: "CASH"} return 201
 2. uri,但是此时驱动不出来以repository来保存相应的payment
 3. user argument captor
@@ -125,6 +135,7 @@ assertThat(priceArgumentCaptor.getValue().getEffectDate(), is(new SimpleDateForm
 5. payment argument captor
 
 #### Reposotory 测试
+
 ###### Configure file
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -153,17 +164,21 @@ assertThat(priceArgumentCaptor.getValue().getEffectDate(), is(new SimpleDateForm
 ```
 
 ###### config load
+
 ```
 InputStream resourceAsStream = Resources.getResourceAsStream("mybatis.xml");
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
 ```
+
 ###### Mapper file
+```
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="thoughtworks.com.repository.ProductRepository">
 </mapper>
+```
 
 ###### Migration
 ```
@@ -193,27 +208,26 @@ flyway {
 ```
 
 ###### mybatis sql log
+
 1. gradle  
-compile "log4j:log4j:1.2.16"
-2. mybatis config
-	
+	`compile "log4j:log4j:1.2.16"`
+2. mybatis config	
 	```
-<settings>
-	<setting name="logImpl" value="LOG4J"/>
-</settings>
-```
+	<settings>
+		<setting name="logImpl" value="LOG4J"/>
+	</settings>
+	```
 3. gradle idea
 4. log4.properties
-
 	```
-log4j.rootLogger=ERROR, stdout
-# MyBatis logging configuration...
-log4j.logger.thoughtworks.com.repository.ProductRepository=TRACE
-# Console output...
-log4j.appender.stdout=org.apache.log4j.ConsoleAppender
-log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
-log4j.appender.stdout.layout.ConversionPattern=%5p [%t] - %m%n
-```
+	log4j.rootLogger=ERROR, stdout
+	# MyBatis logging configuration...
+	log4j.logger.thoughtworks.com.repository.ProductRepository=TRACE
+	# Console output...
+	log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+	log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+	log4j.appender.stdout.layout.ConversionPattern=%5p [%t] - %m%n
+	```
 其中log4j.logger.thoughtworks.com.repository.ProductRepository=TRACE 必须是mapper中存在的namespace才可以
 
 ###### 插入多个表
@@ -229,6 +243,7 @@ log4j.appender.stdout.layout.ConversionPattern=%5p [%t] - %m%n
 这时候我们的selectKey会将product上的id置为我们生成的id。此时就可以通过product.id。
 此时price也可以同时被插入进去。
 insert 的时候，我们的如果selectKey上的order为BEFOR，此时mybatis会首先取得插入的key，然后再将我们keyProperty设置为对应的ID，然后再进行insert操作，所以在insert的时候我们需要制定我们插入的id primary key.
+
 ###### 查询多个表
 有时候我们对象上的数据可能是来自多个数据库表，此时可以使用如下的方式来获取。比如此时我需要获取product上当前的price，我可以使用以下方式来获得product，或得到的product上就会默认的带上currentPrice
 
@@ -310,6 +325,5 @@ mybatis默认使用的是默认的构造函数来反射我们的类，然后将�
 
 
 ###### 当总是出现500错误的时候，很有可能是repository没有注册
-还有可能是因为返回了一个对象，但是没有加@produce(MediaType.APPLICATION_JSON)
 
-######
+还有可能是因为返回了一个对象，但是没有加@produce(MediaType.APPLICATION_JSON)
