@@ -8,6 +8,13 @@ url: https://opinion.works # the base hostname & protocol for your site, e.g. ht
 avatar: https://ae01.alicdn.com/kf/Hec6ee1c6a2294c24ab55bee99c369f621.png
 # seo plugin
 author: 孙建康
+social:
+  name: 孙建康
+  links:
+    - https://www.facebook.com/rising.lambda
+    - https://www.linkedin.com/in/%E5%AD%99%E5%BB%BA%E5%BA%B7/
+    - https://github.com/sjkyspa
+    - https://weibo.com/opinionworks
 
 # Build settings
 markdown: kramdown
@@ -34,7 +41,7 @@ defaults:
       header: blog/header.html
       footer: blog/footer.mobile.html
       meta: meta.html
-
+      image: /assets/images/desk.jpg
   - scope:
       path: about
       type: pages
@@ -44,6 +51,7 @@ defaults:
       header: header.html
       footer: footer.html
       meta: meta.html
+      image: /assets/images/desk.jpg
   - scope:
       path: ""
       type: pages
@@ -53,6 +61,7 @@ defaults:
       header: blog/header.html
       footer: blog/footer.mobile.html
       meta: meta.html
+      image: /assets/images/desk.jpg
   - scope:
       path: taxis
       type: pages
@@ -62,6 +71,7 @@ defaults:
       header: blog/header.html
       footer: blog/footer.mobile.html
       meta: meta.html
+      image: /assets/images/desk.jpg
 
 compress_html:
   clippings: []
