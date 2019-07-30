@@ -8,3 +8,9 @@
 {% if page.url == "/404.html" %}
 <meta http-equiv="refresh" content="5; url=/">
 {% endif %}
+
+{% if site.webmaster_verifications %}
+  {% if site.webmaster_verifications.360 %}
+<meta name="360-site-verification" content="{{ site.webmaster_verifications.360 }}" />
+  {% endif %}
+{% endif %}
