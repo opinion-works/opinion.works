@@ -82,7 +82,7 @@ compress_html:
   ignore:
     envs: []
   blanklines: true
-  profile: true
+  profile: false
   startings: []
 
 about:
