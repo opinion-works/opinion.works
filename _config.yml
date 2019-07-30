@@ -1,6 +1,6 @@
 title: 创意改变生活
 email: rising.lambda@gmail.com
-description: 创意改变生活opinion.works-微服务,REST,架构,PaaS,iot,后端,前端,emacs,e通过技术想法改变生活！
+description: 创意改变生活opinion.works-微服务,REST,架构,PaaS,iot,后端,前端,emacs,通过技术想法改变生活！
 faith: 为者常成，行者常至
 lang: zh_CN
 baseurl:  # the subpath of your site, e.g. /blog
@@ -29,6 +29,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-redirect-from
 
 defaults:
   -
@@ -103,7 +104,7 @@ about:
 # it from the list(Delete '- name: ' and 'url: ', too!)
 navigation:
   - name: 关于
-    url: /about
+    url: https://neo.opinion.works
   - name: 文章
     url: /
   - name: 标签

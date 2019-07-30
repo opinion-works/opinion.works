@@ -1,5 +1,4 @@
 ---
-layout: resume
 title: 孙建康
-description: 创意市集
+redirect_to: http://neo.opinion.works
 ---
