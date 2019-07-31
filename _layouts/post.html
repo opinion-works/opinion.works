@@ -37,6 +37,26 @@ layout: default-blog
   </script>
 </article>
 
+<div id="vcomments"></div>
+<script type="text/javascript">
+  function init() {
+  new Valine({
+    el: '#vcomments',
+    appId: '{{ site.valine.id }}',
+    appKey: '{{ site.valine.key }}',
+    placeholder: "{{ site.valine.placeholder }}"
+  })
+  }
+
+  if (window.addEventListener) {
+    window.addEventListener("load", init, false);
+  } else if (window.attachEvent) {
+    window.attachEvent("onload", init);
+  } else {
+    window.onload = init;
+  }
+</script>
+
 <div class="pagination">
   {% if page.previous.url %}
   <span class="prev" >

@@ -95,10 +95,11 @@ about:
       uri: https://github.com/sjkyspa
 
 
+valine:
+  id: PI7ELhepJg3JYoLi4Nh0YIcy-gzGzoHsz
+  key: bweciMlGktMuGHGsBe1e2lbA
+  placeholder: 机智的你要不要说点什么呢？
 
-
-
-# 你的favicon（出现在浏览器tab上）图片URL，建议使用较小(64px × 64px)的图片
 
 
 # Tabs in header. There are 'Blog', 'About', 'Archive', 'Tags'
