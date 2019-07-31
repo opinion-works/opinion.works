@@ -10,6 +10,13 @@ layout: default-blog
       {{ page.date | date: "%Y-%m-%d" }}
     </span>
 
+    {% if site.valine.visitor and site.valine.id and site.valine.key %}
+    <span id="{{ page.url | relative_url }}" class="leancloud-visitors" data-flag-title="{{ page.title }}">
+      <em class="post-meta-item-text">阅读量 </em>
+      <i class="leancloud-visitors-count"> --- </i>
+    </span>
+    {% endif %}
+
     <ul class="tag">
       {% for tag in page.tags %}
       <li>
@@ -19,6 +26,7 @@ layout: default-blog
       </li>
       {% endfor %}
     </ul>
+
   </div>
 
   <div class="entry">
@@ -44,7 +52,8 @@ layout: default-blog
     el: '#vcomments',
     appId: '{{ site.valine.id }}',
     appKey: '{{ site.valine.key }}',
-    placeholder: "{{ site.valine.placeholder }}"
+    placeholder: "{{ site.valine.placeholder }}",
+    visitor: {{ site.valine.visitor }}
   })
   }
 
