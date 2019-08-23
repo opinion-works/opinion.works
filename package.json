@@ -1,0 +1,35 @@
+{
+  "name": "blogs",
+  "version": "1.0.0",
+  "description": "blogs for Sun JianKang",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.2.0",
+    "gulp-imagemin": "^6.1.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-plumber": "^1.2.1",
+    "imagemin-pngquant": "^8.0.0",
+    "require-dir": "^1.2.0"
+  },
+  "scripts": {
+    "imagemin": "gulp imagemin",
+    "serve": "bundle exec jekyll serve",
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opinion-works/opinion.works.git"
+  },
+  "keywords": [
+    "gulp",
+    "jekyll",
+    "imagemin"
+  ],
+  "author": "Sun JianKang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/opinion-works/opinion.works/issues"
+  },
+  "homepage": "https://github.com/opinion-works/opinion.works#readme"
+}

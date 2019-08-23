@@ -17,7 +17,7 @@ social:
     - https://weibo.com/opinionworks
 webmaster_verifications:
   so: d2ea4e1ab104a564e7c2cbf4e01e09ee
-logo: /assets/images/opinionworks.png
+logo: /assets/imgs/opinionworks.png
 
 # Build settings
 markdown: kramdown
@@ -45,7 +45,7 @@ defaults:
       header: blog/header.html
       footer: blog/footer.mobile.html
       meta: meta.html
-      image: /assets/images/desk.jpg
+      image: /assets/imgs/desk.jpg
   - scope:
       path: about
       type: pages
@@ -55,7 +55,7 @@ defaults:
       header: header.html
       footer: footer.html
       meta: meta.html
-      image: /assets/images/desk.jpg
+      image: /assets/imgs/desk.jpg
   - scope:
       path: ""
       type: pages
@@ -65,7 +65,7 @@ defaults:
       header: blog/header.html
       footer: blog/footer.mobile.html
       meta: meta.html
-      image: /assets/images/desk.jpg
+      image: /assets/imgs/desk.jpg
   - scope:
       path: taxis
       type: pages
@@ -75,7 +75,7 @@ defaults:
       header: blog/header.html
       footer: blog/footer.mobile.html
       meta: meta.html
-      image: /assets/images/desk.jpg
+      image: /assets/imgs/desk.jpg
 
 compress_html:
   clippings: all

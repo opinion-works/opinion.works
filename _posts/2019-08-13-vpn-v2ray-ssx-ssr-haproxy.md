@@ -34,7 +34,7 @@ description: 如何科学上网（搭梯子）
 
 很久很久以前我们上网的方式是这样的：
 
-![img](/assets/posts/images/20190813/original.png)
+![img](/assets/imgs/docs/20190813/original.png)
 
 我们直接访问服务提供商，获取数据。服务提供商，直接将相关的数据发送给我们。没有中间商赚差价，这不就是很多人追求的嘛（哈哈哈哈哈）。当有了利益或者危
 险的时候中间商就出现了。这种方式对于小朋友不友好啊，万一小朋友不小心看到了不该看的东西怎么办，我党得为小朋友负责啊。所以我党说，我要检查下你看得东
@@ -42,12 +42,12 @@ description: 如何科学上网（搭梯子）
 
 我党说要有墙（[GFW](https://zh.wikipedia.org/wiki/%25E9%2598%25B2%25E7%2581%25AB%25E9%2595%25BF%25E5%259F%258E)），于是便有了墙。
 
-![img](/assets/posts/images/20190813/gfw.png)
+![img](/assets/imgs/docs/20190813/gfw.png)
 
 在这种情况下，我们的小朋友不能再随心所欲的访问他想访问的东西了，这可如何是好呢？这个需求是如此的强烈，小朋友怎么能忍呢。于是小朋友就用微信联系到了，
 自己再国外的朋友。说我想访问下某个网站，麻烦你访问下，把内容打包下发给我啊。于是我们上网的方式就变成了如下所示。
 
-![img](/assets/posts/images/20190813/proxy.png)
+![img](/assets/imgs/docs/20190813/proxy.png)
 
 1.  发微信给国外的小朋友，hi 还好吗（how are you）？
 2.  GFW: 微信聊天信息，然后就把信息转发给了国外的小朋友
@@ -82,7 +82,7 @@ description: 如何科学上网（搭梯子）
 shadowsocks 简称 SS, 是一种基于 [SOCKS5](https://zh.wikipedia.org/wiki/SOCKS#SOCK5) 代理方式的代理软件。shadowsocks 支持很多加密方式，可以使得数据包很难被防火墙识别，从而达到科学上网的目地。
 原理图如下所示
 
-![img](/assets/posts/images/20190813/ss.png)
+![img](/assets/imgs/docs/20190813/ss.png)
 
 
 <a id="org2f6f78b"></a>
@@ -107,7 +107,7 @@ v2ray 的原理跟 shandowsocks 很相似， 但是 v2ray 相对设计更加灵�
 
 因为被墙的厉害，所以我们采用如下的部署的结构
 
-![img](/assets/posts/images/20190813/archi.png)
+![img](/assets/imgs/docs/20190813/archi.png)
 
 在此处我们使用 docker, docker-compose 来完成部署
 
