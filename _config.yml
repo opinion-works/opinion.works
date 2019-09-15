@@ -19,6 +19,10 @@ webmaster_verifications:
   so: d2ea4e1ab104a564e7c2cbf4e01e09ee
 logo: /assets/imgs/opinionworks.png
 
+assets:
+  external:
+    uglifier:
+      harmony: true
 # Build settings
 markdown: kramdown
 permalink: pretty
