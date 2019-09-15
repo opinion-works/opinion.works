@@ -31,7 +31,6 @@ sass:
 plugins:
   - jekyll-feed
   - jekyll-assets
-  - jekyll-minifier
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-seo-tag
