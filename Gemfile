@@ -14,7 +14,6 @@ gem "puma"
 group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-assets"
-  gem "jekyll-minifier"
   gem "jekyll-paginate"
   gem "jekyll-sitemap"
   gem 'jekyll-redirect-from'
