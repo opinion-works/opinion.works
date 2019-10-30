@@ -1,3 +1,5 @@
+---
+
 layout: post  
 title: "OpenGL 渲染管线"  
 date: 2019-10-31 12:40:20 +0800  
